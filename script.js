@@ -7,21 +7,21 @@ function main() {
   const renderer = new THREE.WebGLRenderer({canvas});
 
   const fov = 30;
-  const aspect = 2;  // the canvas default
+  const aspect = 1;  // the canvas default
   const near = 0.1;
   const far = 100;
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.set(0, 10, 20);
+  camera.position.set(0, 1, 5);
 
   const controls = new OrbitControls(camera, canvas);
-  controls.target.set(0, 5, 0);
+  controls.target.set(0, 1, 0);
   controls.update();
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('black');
 
   {
-    const planeSize = 20;
+    const planeSize = 10;
 
     const loader = new THREE.TextureLoader();
     const texture = loader.load('https://threejsfundamentals.org/threejs/resources/images/checker.png');
